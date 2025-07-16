@@ -1,3 +1,13 @@
+### 📡 Serial Log Reference
+
+This module communicates over serial at **115200 baud**. Logs, data, and error messages follow a compact and parsable format.
+
+- All logs begin with `L#`, errors with `E#`, and data lines with `F... S...`.
+- Endstop and Killstop states are printed as: `L#E:1`, `L#K:0` (1 = active, 0 = inactive).
+- Force-position data follows the format: `F<force> S<step>`, e.g., `F1.234 S100`.
+
+You can use [Arduino Serial Monitor](https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-serial-monitor) or [Python `pyserial`](https://pyserial.readthedocs.io/en/latest/pyserial.html) for reading and parsing these messages in real-time.
+
 | Code     | Type   | Description                          | Trigger Location                  |
 |----------|--------|--------------------------------------|-----------------------------------|
 | L#INI    | Log    | Initialization started               | `setup()`                         |
