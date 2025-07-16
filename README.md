@@ -47,26 +47,24 @@ handheld-acoustic-device/
 
 ---
 
-## Suggested README Sections
-
-1. **Introduction**
-2. **System Components**
-3. **How It Works**
-4. **Setup Instructions**
+## 1. **Introduction**
+## 2. **System Components**
+## 3. **How It Works**
+## 4. **Setup Instructions**
    - Arduino firmware upload
    - Raspberry Pi GUI setup
-5. **Usage Workflow**
+## 5. **Usage Workflow**
    - Clamping routine
    - Triggering miniVNA
    - Data retrieval
-6. **Data Format**
+## 6. **Data Format**
    - Touchstone (.s2p) description
-7. **Hardware Assembly**
+## 7. **Hardware Assembly**
    - BOM and 3D models
-8. **Theoretical Background**
+## 8. **Theoretical Background**
    - Acoustic impedance
    - Plant sensing rationale
-9. **Contributing & License**
+## 9. **Contributing & License**
 
 Let me know which sections you'd like filled in first.
 
