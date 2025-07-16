@@ -240,15 +240,18 @@ void setup() {
 
   setMicrostepping();
   disableMotor();
+  
   Serial.print("L#INI");
-  resetFX29();
+  resetFX29();  
   delay(100);
+  
   Serial.println("L#STU");
-  Serial.println(endstopReached(ENDSTOP));
-  Serial.println(endstopReached(KILLSTOP));
+  Serial.print("L#E:"); Serial.println(endstopReached(ENDSTOP));
+  Serial.print("L#K:"); Serial.println(endstopReached(KILLSTOP));
   delay(100);
-  Serial.println(endstopReached(ENDSTOP));
-  Serial.println(endstopReached(KILLSTOP));
+  Serial.print("L#E:"); Serial.println(endstopReached(ENDSTOP));
+  Serial.print("L#K:"); Serial.println(endstopReached(KILLSTOP));
+
   homeSequence();
 }
 
