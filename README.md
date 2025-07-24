@@ -44,6 +44,10 @@ handheld-acoustic-device/
     ├── calibration_guide.md
     └── theory_background.md
 ```
+<p float="left">
+  <img src="assets/handheld-picture-1.jpeg" width="45%" />
+  <img src="assets/handheld-picture-2.jpeg" width="45%" />
+</p>
 
 ---
 
