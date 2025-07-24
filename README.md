@@ -32,9 +32,8 @@ handheld-acoustic-device/
 │   ├── schematics/           # Circuit and filtering board schematics
 │   │   └── signal_chain.pdf
 │   ├── bill_of_materials.xlsx
-│   └── mechanical_parts/     # 3D printable STL & CAD files
-│       ├── clamp_arm.stl
-│       └── enclosure.stl
+│   └── cad/                  # Fusion360 CAD files
+│   └── stl/                  # 3D printable STL  files
 ├── /data/
 │   ├── example_measurements/
 │   │   └── plant_stem_001.s2p
