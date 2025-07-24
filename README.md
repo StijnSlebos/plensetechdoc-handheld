@@ -1,4 +1,4 @@
-![System Overview](assets/docelogo.png)
+![System Overview](assets/docslogo.png)
 # plensetechdoc-handheld
 Documentation and code for the ultrasound handheld measuring device built by plense-technologies.
 
