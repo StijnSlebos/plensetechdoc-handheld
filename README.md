@@ -21,31 +21,37 @@ A precision-engineered handheld setup for in-situ acoustic measurement of plant 
 
 ```text
 handheld-acoustic-device/
-├── README.md                  # Documentation overview
-├── /arduino-firmware/        # Stepper motor & sensor control firmware
+│
+├── README.md                   # Top-level documentation overview
+│
+├── arduino-firmware/           # Firmware for stepper motor and sensor control
 │   └── clamp_control.ino
-├── /raspberry-pi-gui/        # GUI Python application
-│   ├── gui_main.py
-│   ├── vna_control.py
-│   └── force_controller.py
-├── /hardware/
-│   ├── schematics/           # Circuit and filtering board schematics
-│   │   └── signal_conditioning_chain.pdf
+│
+├── raspberry-pi-gui/           # Python GUI application for Raspberry Pi
+│   ├── README.md               # Installation instructions and user guide
+│   ├── requirements.txt        # Python dependencies (pip)
+│   ├── calibration/            # Calibration files for nanoVNA
+│   │   └── calibration_10-500khz.cal
+│   ├── code/                   # GUI and controller source code
+│   │   └── *.py
+│   └── output/                 # Output folder for measurement results
+│       └── metadata.json       # JSON file storing configuration and metadata
+│
+├── hardware/
+│   ├── schematics/             # Circuit diagrams and signal conditioning chain
+│   │   ├── signal_conditioning_chain.pdf
 │   │   └── arduino_schematics.pdf
-│   ├── bill_of_materials.xlsx/.md
-│   └── cad/                  # Fusion360 CAD files
+│   ├── bill_of_materials.md    # Parts list (can also be .xlsx)
+│   ├── cad/                    # Fusion 360 design files
 │   │   └── ...
-│   └── stl/                  # 3D printable STL  files
-│   │   └── ...
-├── /data/
-│   ├── example_measurements/
-│   │   └── plant_stem_001.s2p
-│   └── calibration/
-│       └── baseline.s2p
-└── ?/docs/
+│   └── stl/                    # 3D printable models
+│       └── ...
+│
+└── docs/                       # Technical documentation
     ├── usage_guide.md
     ├── calibration_guide.md
     └── theory_background.md
+
 ```
 <p float="left">
   <img src="assets/handheld-picture-1.jpeg" width="45%" />
