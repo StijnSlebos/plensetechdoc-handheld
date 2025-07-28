@@ -102,11 +102,12 @@ You might want to bring with you when going into a greenhouse for testing:
 ## 3. **Setup Instructions**
 If you work with an existing setup, you can skip the first segment where the construction and configuration is explained. However, it might still be good to understand the entire setup in case of troubleshooting. The arduino firmware upload is only necessary once per arduino. (an arduino is a microcontroller, it will just do whatever you configure it to on startup -> setup 🎚️ once and then loop ♻️.)
 
+---
 ### Building the setup
 -> see the schematic documentation, BOM and cad files.
 _i will explain in a minute_
 
-
+---
 ### Arduino Firmware 
 
 > ⚠️ **Warning**: If homing does not occur immediately or endstop trigger fails, disconnect power to avoid mechanical damage.
@@ -125,19 +126,45 @@ For **existing setups**:
 - Ensure power is connected to both Arduino and the motor driver (black adapter)
 - On power-up, the Arduino will automatically home and enter wait mode
 
+---
+### Standalone Arduino Operation (Serial Monitor)
+
+The Arduino firmware (`clamp_control.ino`) can also operate without the GUI, using direct commands via a serial monitor.
+
+To trigger a force-controlled clamp cycle, send the following command over the serial interface:
+
+```bash
+MOVETOFORCE <force_in_N> <hold_duration_in_s>
+```
+
+**Example**:
+```bash
+MOVETOFORCE 12 5
+```
+
+This moves the clamp to **12 N**, holds for **5 seconds**, then automatically returns to home position.
+
+> ⚠️ **Force Limit**: Never exceed `15 N` to avoid damaging the clamp or sensor.
+
+---
 ### Raspberry Pi GUI Setup
-Startup sequence:
+
+For the full explanation of the RaspberryPi controller/gui code, I refer to the dedicated [README.md](raspberry-pi-gui/README.md) within its folder.
+
+Quick Startup sequence (from code-terminal or other terminal environment):
 ```bash
 cd contact-edge-code
 source venv/bin/activate
 python gui.py
 ```
 
+_Notes:_
 - GUI may stall on message boxes — check active windows.
 - The nanoVNA **does not require manual calibration**: calibration files are loaded automatically from the Raspberry Pi.
 - However, the mechanical setup **must be calibrated on startup** using a 12 mm stave to align motor steps with diameter.
-- Use "Single" measurement mode (3 repetitions does not function reliably).
-- GUI failure mode is non-destructive; no need to delete files.
+- Use "Single" measurement mode (~~3 repetitions does not function reliably~~).
+- GUI failure mode is non-destructive; no need to delete files after crash.
+  - See troubleshooting at the end of file for common errors
 
 ## 4. **Usage Workflow**
 ### Clamping Routine
@@ -162,15 +189,7 @@ python gui.py
 - Contains frequency, magnitude, and phase of S11/S21 etc.
 - Can be visualized with tools like NanoVNA Saver or MATLAB
 
-## 6. **Hardware Assembly**
-- Include Bill of Materials (BOM)
-- STL files and CAD models for 3D-printed parts
-- *Future additions:*
-  - Image of amplifier configuration (tunable gain stages)
-  - Signal conditioning circuit schematic
-  - Full Arduino wiring diagram: FX29 force sensor, DRV8825 motor driver, endstop, button, cooling fan, NEMA 17 stepper motor
-
-## 7. **Troubleshooting Guide**
+## 6. **Troubleshooting Guide**
 ### Common Problems & Tips
 - Start measurements at 8:00 — helps reduce heat and avoids interference with irrigation (sproeiers)
 - Time might be inaccurate if there’s no internet connection
@@ -195,7 +214,7 @@ python gui.py
 6. Reconnect the Arduino USB cable
 7. Restart the GUI and perform calibration
 
-## 8. **Contributing & License**
+## 7. **Contributing & License**
 - WUR and TUD Proposals
     - Proposals
 
