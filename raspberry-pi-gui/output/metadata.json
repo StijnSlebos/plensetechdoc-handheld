@@ -1,0 +1,109 @@
+{
+    "experiment_id": "e0000aa",
+    "experiment_name": "20250807_Rose",
+    "experiment_description": "Rosedrought",
+    "start_datetime": "2025-07-08 00:00:00",
+    "end_datetime": "2025-12-08 00:00:00",
+    "input_settings": {
+        "start_frequency_Hz": 10000,
+        "end_frequency_Hz": 500000,
+        "number_of_points": 4096,
+        "sweep_type": "lin",
+        "zero_distance_mm": 13.45,
+        "node_number": "1",
+        "plant_number": "1"
+    },
+    "object_properties": [],
+    "measurement_log": [
+        {
+            "us_properties": {
+                "timestamp": "2025-07-08T13:57:11",
+                "object_id": "0",
+                "node_number": null,
+                "repetition": 1,
+                "object_name": "calibration",
+                "zero_offset_mm": 22.265,
+                "calculated_diameter_mm": 12.05,
+                "flags": [
+                    "MIP",
+                    "LSD"
+                ],
+                "flaginfo": {
+                    "MIP": "MIP:6",
+                    "LSD": "LSD:0.950mm"
+                }
+            },
+            "measurement_files": {
+                "s2p": "sweep_cal_20250708_135711.s2p",
+                "csv": "fd_cal_20250708_135711.csv"
+            }
+        },
+        {
+            "us_properties": {
+                "timestamp": "2025-07-08T13:58:37",
+                "object_id": "1",
+                "node_number": "1",
+                "repetition": 1,
+                "object_name": "plant_1",
+                "zero_offset_mm": 22.265,
+                "calculated_diameter_mm": 11.945,
+                "flags": [
+                    "MIP",
+                    "LSD"
+                ],
+                "flaginfo": {
+                    "MIP": "MIP:4",
+                    "LSD": "LSD:0.410mm"
+                }
+            },
+            "measurement_files": {
+                "s2p": "sweep_20250708_135837.s2p",
+                "csv": "fd_20250708_135837.csv"
+            }
+        },
+        {
+            "us_properties": {
+                "timestamp": "2025-07-08T13:59:42",
+                "object_id": "1",
+                "node_number": "1",
+                "repetition": 2,
+                "object_name": "plant_1",
+                "zero_offset_mm": 22.265,
+                "calculated_diameter_mm": 11.840000000000002,
+                "flags": [
+                    "LSD"
+                ],
+                "flaginfo": {
+                    "LSD": "LSD:0.940mm"
+                }
+            },
+            "measurement_files": {
+                "s2p": "sweep_20250708_135942.s2p",
+                "csv": "fd_20250708_135942.csv"
+            }
+        },
+        {
+            "us_properties": {
+                "timestamp": "2025-07-08T14:00:57",
+                "object_id": "1",
+                "node_number": "1",
+                "repetition": 3,
+                "object_name": "plant_1",
+                "zero_offset_mm": 22.265,
+                "calculated_diameter_mm": 12.05,
+                "flags": [
+                    "MIP",
+                    "LSD"
+                ],
+                "flaginfo": {
+                    "MIP": "MIP:4",
+                    "LSD": "LSD:0.540mm"
+                }
+            },
+            "measurement_files": {
+                "s2p": "sweep_20250708_140057.s2p",
+                "csv": "fd_20250708_140057.csv"
+            }
+        }
+    ]
+}
