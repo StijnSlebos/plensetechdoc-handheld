@@ -104,8 +104,8 @@ If you work with an existing setup, you can skip the first segment where the con
 
 ---
 ### Building the setup
--> see the schematic documentation, BOM and cad files.
-_i will explain in a minute_
+-> see the [assembly documentation](hardware/hardware_assembly.md), BOM and cad files in this repo.
+_it is all explained there!_
 
 ---
 ### Arduino Firmware 
