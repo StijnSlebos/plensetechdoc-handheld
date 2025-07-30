@@ -37,7 +37,7 @@ handheld-acoustic-device/
 │   └── output/                 # Output folder for measurement results
 │       └── metadata.json       # JSON file storing configuration and metadata
 │
-├── hardware/
+└── hardware/
     ├── schematics/             # Circuit diagrams and signal conditioning chain
     │   ├── signal_conditioning_chain.pdf
     │   └── arduino_schematics.pdf
