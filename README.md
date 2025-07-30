@@ -38,19 +38,15 @@ handheld-acoustic-device/
 │       └── metadata.json       # JSON file storing configuration and metadata
 │
 ├── hardware/
-│   ├── schematics/             # Circuit diagrams and signal conditioning chain
-│   │   ├── signal_conditioning_chain.pdf
-│   │   └── arduino_schematics.pdf
-│   ├── bill_of_materials.md    # Parts list (can also be .xlsx)
-│   ├── cad/                    # Fusion 360 design files
-│   │   └── ...
-│   └── stl/                    # 3D printable models
-│       └── ...
-│
-└── docs/                       # Technical documentation
-    ├── usage_guide.md
-    ├── calibration_guide.md
-    └── theory_background.md
+    ├── schematics/             # Circuit diagrams and signal conditioning chain
+    │   ├── signal_conditioning_chain.pdf
+    │   └── arduino_schematics.pdf
+    ├── bill_of_materials.md    # Parts list (can also be .xlsx)
+    ├── cad/                    # Fusion 360 design files
+    │   └── ...
+    └── stl/                    # 3D printable models
+        └── ...
+
 
 ```
 <p float="left">
