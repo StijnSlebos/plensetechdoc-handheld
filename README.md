@@ -164,30 +164,65 @@ _Notes:_
 - However, the mechanical setup **must be calibrated on startup** using a 12 mm stave to align motor steps with diameter.
 - Use "Single" measurement mode (~~3 repetitions does not function reliably~~).
 - GUI failure mode is non-destructive; no need to delete files after crash.
-  - See troubleshooting at the end of file for common errors
+      - See troubleshooting at the end of file for common errors
 
 ## 4. **Usage Workflow**
+Once you have everything set up hardware wise, make sure the raspberry pi software (os and then python gui) is also ready to run. When you have the full setup ready, follow the following steps to perform a full measurement/experiment.
+
+- Start by configuring the settings in the metadata file. This is used as settings for your experiments and makes sure all filenames and data is in proper format
+- Also make sure you have some data-storage-space available. (the file sizes are not very big, but no space could cause errors)
+- Once thats all set up, connect the power to the arduino (first the usb/5v to the Raspberry pi, then once that works, the 12v to the motor)
+     - if homing occurs properly you can continue
+- Now we can start the gui application from the raspberry pi (its above)
+     - And perform the required calibration run with a 12mm stave.
+
+Once this is all set, below the workflows for different situations.
+
 ### Clamping Routine
-- Position stem in clamp
-- Allow automatic homing and engagement
+Once you are all set, you can:
+- Position stem in clamp; this will be a bit nifty at first, but make sure everything is well in place once you press measure
+- configure plant and/or node number in the GUI
+- press measure or 3 reps
+- hold still during the measurement
+     - this will be the hard part, but this makes for better results
+- Wait for automatic homing
+     - the force measurement is now also finished, you can move freely again
 
 **Per Plant Protocol:**
-- Measure stem diameter using caliper
+Some remarks on working with plants:
+- Label plants if not already labeled
+     - nodes might also need labeling if you measure multiple (generally greenhouses/experimental facilities have tools for this)
+- Measure stem/node diameter using caliper
 - Take a photo of the plant using a smartphone
+- Write down specific observations (after 10 plants many things will be forgotten)
 
-### Triggering nanoVNA
+**Triggering nanoVNA**
+THe nanovna is controlled through the gui, so you wont have to do anything specifically yourself:
 - Use GUI to start frequency response measurement
 - Ensure mechanical calibration has been completed
+- If the vna does not respond properly reset or restart it
 
-### Data Retrieval
+> When running in new settings, it is advised to recalibrate and update the calibration file accordingly.
+
+**Data Retrieval**
 - Measurements saved locally on Raspberry Pi
-- Access via SCP or USB export
+- Access via SCP or USB expor
+     - _Raspberry Pi Connect_ is a nice new service worth checking out for these purposes. 
 
 ## 5. **Data Format**
+The frequencyresponse (vna transfer data) files are saved in touchstone files. The force data is logged to a csv-file. The metadata(.json)file can be loaded or read to match files with measurements. 
+
+### Metadata.json
+Metadatafile in proper json format. Can be loaded in python as a dictionary containing both settings and measurement logs.
+
 ### Touchstone (.s2p)
 - Standard 2-port network parameter file
 - Contains frequency, magnitude, and phase of S11/S21 etc.
 - Can be visualized with tools like NanoVNA Saver or MATLAB
+
+### Force-sweep (.csv)
+- Standard csv log,
+- contains timestamp, microsteps (travel), distance (converted from travel) and force in newtons (N).
 
 ## 6. **Troubleshooting Guide**
 ### Common Problems & Tips
